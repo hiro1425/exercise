@@ -1,0 +1,87 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 1450px;
+  padding: 0 100px 0 30px;
+  background-color: #DDFFFF;
+}
+
+.header a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 60px;
+}
+
+.nav__btn {
+  margin-left: 40px;
+  margin-right: 100px;
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  line-height: 60px;
+  margin-left: 70px;
+}
+
+/* メインページ */
+body {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("jogging3.jpg");
+  background-size: cover;
+  padding-bottom: 66.7%;
+  background-color:rgba(255,255,255,0.7);
+	background-blend-mode:lighten;
+  height: 1067px;
+  width: 100%;
+}
+
+.not-logged-in {
+  font-size: 50px;
+  font-weight: 600;
+  padding-top: 300px;
+}
