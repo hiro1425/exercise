@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_21_035730) do
     t.text "text", null: false
     t.integer "category_id", null: false
     t.integer "place_id", null: false
-    t.date "target_date", null: false
+    t.date "execution_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

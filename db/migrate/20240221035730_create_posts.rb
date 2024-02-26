@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.text :text,                     null: false
       t.integer :category_id,           null: false
       t.integer :place_id,              null: false
-      t.date :target_date,              null: false
+      t.date :execution_date,           null: false
       t.timestamps
     end
   end
