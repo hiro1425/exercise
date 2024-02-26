@@ -59,6 +59,10 @@ a {
   margin-right: 100px;
 }
 
+.nav__logout {
+  margin-right: 80px;
+}
+
 .inner {
   width: 100%;
   display: flex;
@@ -85,3 +89,110 @@ body {
   font-weight: 600;
   padding-top: 300px;
 }
+
+/* 投稿ページ */
+.posts-record-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.post-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-text {
+  background-color: aqua;
+  text-align: center;
+}
+
+.posts-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 0;
+}
+
+.input-execution-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-execution-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-execution-wrap p {
+  line-height: 60px;
+  padding: 0 5px;
+}
+
+/*共通*/
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.record-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+/* 投稿ボタン */
+.post-btn-contents {
+  width: 100%;
+  text-align: center;
+}
+
+.post-btn {
+  background: #6699CC;
+  border: 1px solid #6699CC;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-top: 60px;
+  margin-bottom: 4vh;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+}
+/* 投稿ボタン */
