@@ -1,20 +1,22 @@
 <main class="main">
-  <div class="inner">
+  <div class="contents">
     <% if user_signed_in? %>
-      <%# ログインしているときは以下を表示する %>
       <div class="greeting">
         <%= "こんにちは、" %>
         <%= link_to "#{current_user.nickname}さん", '#', class: :greeting__link %>
       </div>
-      <%# // ログインしているときは上記を表示する %>
     <% else %>
       <div class="not-logged-in">
         自分のペースでゆっくり進めていこう
       </div>
     <% end %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
-      <%#= render partial: 'posts', collection: @posts %>
+    <div class="index_contents">
+      <div class='index_records'>
+        運動記録一覧
+        <div class='index_record'>
+          <%= render partial: 'post', collection: @posts %>
+        </div>
+      </div>
     </div>
   </div>
 </main>
