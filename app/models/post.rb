@@ -9,6 +9,10 @@ class Post < ApplicationRecord
     validates :place_id
     validates :category_id
   end
+
+  def execution_date=(date_array)
+    self[:execution_date] = Date.new(date_array[0], date_array[1], date_array[2])
+  end
   
   belongs_to :user
 
