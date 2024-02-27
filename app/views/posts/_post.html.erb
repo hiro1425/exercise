@@ -1,0 +1,8 @@
+<div class="post_contents">
+  <%= link_to post.title, '#', class: :record_title %>
+  <div class="post_execution">
+    <%= post.execution_date %>
+  <div class="post_nickname">
+    by<%= link_to "#{post.user.nickname}", '#', class: :greeting__link %>
+  </div>
+</div>
