@@ -7,7 +7,7 @@
       <%= link_to "by #{@post.user.nickname}", '#', class: :post__user %>
       <% if current_user == @post.user %>
         <div class="post__manage">
-          <%= link_to "編集する", '#', class: :post__btn %>
+          <%= link_to "編集する", edit_post_path(@post), class: :post__btn %>
           <%= link_to "削除する", '#', data: { turbo_method: :delete }, class: :post__delete__btn %>
         </div>
       <% end %>
