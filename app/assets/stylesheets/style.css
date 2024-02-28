@@ -179,6 +179,94 @@ body {
   padding: 0 5px;
 }
 
+/* 詳細ページ */
+.posts-record-show-main {
+  background-color: #FFF;
+  height: 800px;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.inner_show {
+  width: 600px;
+  height: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prototype__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.prototype__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.post__user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+.post__manage{
+  margin-bottom: 20px;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.detail-post {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+
+
+.post__btn{
+  width: 60px;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  background-color: #6699CC;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
+.post__delete__btn{
+  width: 60px;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
 /*共通*/
 .indispensable {
   background: #ea352d;

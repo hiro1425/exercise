@@ -1,0 +1,65 @@
+<main class="posts-record-show-main">
+  <div class="inner_show">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @post.title%>
+      </p>
+      <%= link_to "by #{@post.user.nickname}", '#', class: :post__user %>
+      <% if current_user == @post.user %>
+        <div class="post__manage">
+          <%= link_to "編集する", '#', class: :post__btn %>
+          <%= link_to "削除する", '#', data: { turbo_method: :delete }, class: :post__delete__btn %>
+        </div>
+      <% end %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-post">ニックネーム</th>
+            <td class="detail-value"><%= @post.user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">テキスト</th>
+            <td class="detail-value"><%= @post.text %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">カテゴリー</th>
+            <td class="detail-value"><%= @post.category.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">場所</th>
+            <td class="detail-value"><%= @post.place.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">実施日</th>
+            <td class="detail-value"><%= @post.execution_date %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+        <%# if user_signed_in? %>
+          <%#= form_with model: [@post, @comment], local: true do |f|%>
+            <%#div class="field">
+              <%= f.label :content, "コメント" %><%#br />
+              <%#%= f.text_field :content, id:"comment_content" %>
+            <%#/div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            <%#/div>
+          <% end %>
+        <%# end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <%#ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <%# @comments.each do |comment| %>
+            <%#li class="comments_list">
+              <%= comment.content %>
+              <%#= link_to "(#{comment.user.name})", user_path(comment.user), class: :comment_user %>
+            <%#/li>
+          <%# end %>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
