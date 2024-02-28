@@ -1,35 +1,37 @@
-<%= form_with model: @post, url: posts_path, local: true do |f| %>
-  <div class="posts-record-main">
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">運動記録の情報を入力</h2>
+    <%= form_with model: @post, url: post_path, local: true do |f| %>
+
     <%= render partial: 'shared/error_messages', locals: { model: f.object } %>
-    <div class="post-box">
-      <div class="record-text">
-      運動記録投稿フォーム
-      </div>
+
+    <div class="new-items">
       <div class="weight-bold-text">
         記録タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field :title, class:"posts-text", placeholder:"タイトル" %>
-      <div class="record-explain">
+      <%= f.text_field :title, class:"posts-text", id:"posts-text", placeholder:"タイトル" %>
+      <div class="items-explain">
         <div class="weight-bold-text">
-          運動記録詳細
+          テキスト
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :text, class:"posts-text", placeholder:"テキスト", rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"posts-text", id:"post-info", placeholder:"テキスト", rows:"7" ,maxlength:"1000" %>
       </div>
+    </div>
+    <div class="items-detail">
+      <div class="weight-bold-text">記録の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"text-select"}) %>
-      </div>
-      <div class="form">
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           場所
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"text-select"}) %>
+        <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
       <div class="form">
         <div class="weight-bold-text">
@@ -50,10 +52,11 @@
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
         </div>
       </div>
-      <div class="post-btn-contents">
-        <%= f.submit "投稿する" ,class:"post-btn" %>
-        <%= link_to 'もどる', root_path, class:"back-btn" %>
-      </div>
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "変更する" ,class:"post-btn" %>
+      <%= link_to 'もどる', post_path, class:"back-btn" %>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
