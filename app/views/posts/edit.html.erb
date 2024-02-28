@@ -1,5 +1,5 @@
 <div class="items-sell-contents">
-  <div class="items-sell-main">
+  <div class="posts-record-main">
     <h2 class="items-sell-title">運動記録の情報を入力</h2>
     <%= form_with model: @post, url: post_path, local: true do |f| %>
 
@@ -20,13 +20,14 @@
       </div>
     </div>
     <div class="items-detail">
-      <div class="weight-bold-text">記録の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <div class="form">
         <div class="weight-bold-text">
           場所
           <span class="indispensable">必須</span>
@@ -53,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="sell-btn-contents">
+    <div class="post-btn-contents">
       <%= f.submit "変更する" ,class:"post-btn" %>
       <%= link_to 'もどる', post_path, class:"back-btn" %>
     </div>

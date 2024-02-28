@@ -22,14 +22,14 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"text-select"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
       </div>
       <div class="form">
         <div class="weight-bold-text">
           場所
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"text-select"}) %>
+        <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box"}) %>
       </div>
       <div class="form">
         <div class="weight-bold-text">
