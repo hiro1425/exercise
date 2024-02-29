@@ -9,7 +9,7 @@ class Post < ApplicationRecord
     validates :place_id
     validates :category_id
   end
-  
+
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
