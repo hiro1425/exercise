@@ -2,8 +2,7 @@
   <div class="card__body">
     <%= link_to posts.title, post_path(posts), class: :card__title%>
     <p class="card__summary">
-      <%= posts.text %>
+      <%= posts.execution_date %>
     </p>
-    <%= link_to "by #{posts.user.nickname}", user_path(posts.user), class: :card__user %>
   </div>
 </div>

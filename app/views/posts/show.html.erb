@@ -1,10 +1,10 @@
 <main class="posts-record-show-main">
   <div class="inner_show">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="post__wrapper">
+      <p class="post__hedding">
         <%= @post.title%>
       </p>
-      <%= link_to "by #{@post.user.nickname}", '#', class: :post__user %>
+      <%= link_to "by #{@post.user.nickname}", user_path(@post.user), class: :post__user %>
       <% if current_user == @post.user %>
         <div class="post__manage">
           <%= link_to "編集する", edit_post_path(@post), class: :post__btn %>
