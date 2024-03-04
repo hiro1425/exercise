@@ -3,6 +3,6 @@
   <div class="post_execution">
     <%= post.execution_date %>
   <div class="post_nickname">
-    by<%= link_to "#{post.user.nickname}", '#', class: :greeting__link %>
+    by<%= link_to "#{post.user.nickname}", user_path(post.user), class: :greeting__link %>
   </div>
 </div>
