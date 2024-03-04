@@ -1,3 +1,16 @@
+## アプリケーション名
+「EXERCISE」
+
+## アプリケーション概要
+普段の日常生活での身体を動かすという運動に対しての意識を高めることを目的としたアプリケーション
+
+## URL
+https://exercise-6i8n.onrender.com
+
+## テスト用アカウント
+・メールアドレス sample@sample.com
+・パスワード sample01
+
 ## usersテーブル
 
 | Column               | Type    | Options     |
