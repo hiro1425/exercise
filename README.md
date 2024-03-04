@@ -9,7 +9,22 @@ https://exercise-6i8n.onrender.com
 
 ## テスト用アカウント
 ・メールアドレス sample@sample.com
+
 ・パスワード sample01
+
+## 利用方法
+
+### 運動記録投稿
+１．トップページのヘッダーからユーザー新規登録を行う
+
+２．記録投稿ボタンから記録の内容（タイトル・テキスト・カテゴリー・場所）を入力し投稿する
+
+## アプリケーションを作成した背景
+自分自身が家での活動が主になっているので、あまり外に出ないことから「運動に対して苦手意識がある」という課題を抱えていることが分かった。
+
+課題を分析した結果、「運動に対する認識が高い」ということが真因であると仮説を立てた。同様の問題を抱えている方も多いと推測し、真因を解決
+
+する為に記録を共有し、ユーザー同士でコミュニケーションを促進できるアプリケーションを開発することにした。
 
 ## usersテーブル
 
@@ -23,6 +38,7 @@ https://exercise-6i8n.onrender.com
 
 ### Association
 has_many :posts
+
 has_many :comments
 
 ## postsテーブル
@@ -38,6 +54,7 @@ has_many :comments
 
 ### Association
 belongs_to :user
+
 has_many :comments
 
 ## commentsテーブル
@@ -50,4 +67,5 @@ has_many :comments
 
 ### Association
 belongs_to :user
+
 belongs_to :post
