@@ -374,7 +374,7 @@ form input[type="submit"]:hover {
 /* 詳細ページ */
 .posts-record-show-main {
   background-color: #FFF;
-  height: 800px;
+  height: 1000px;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
@@ -456,6 +456,33 @@ form input[type="submit"]:hover {
   transition: 0.4s ease;
   margin: 0 4px;
 }
+
+.post__btn:hover{
+  color: #fff;
+  background: #999;
+}
+
+.post__comments{
+  background-color: #f6f6f6;
+  padding: 20px;
+  margin: 28px 0 40px 0;
+}
+
+.comments_lists{
+  padding-left: 20px;
+}
+
+.comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
+}
+
 
 /* ユーザーページ */
 .main_user{
