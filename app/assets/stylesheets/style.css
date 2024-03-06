@@ -530,6 +530,12 @@ form input[type="submit"]:hover {
   resize: none;
 }
 
+/* コメント編集 */
+.comment_main{
+  width: 70vw;
+  background-color: #FFF;
+}
+
 /* 投稿ボタン */
 .post-btn-contents {
   width: 100%;

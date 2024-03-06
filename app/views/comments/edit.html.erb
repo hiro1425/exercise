@@ -1,0 +1,29 @@
+<div class="posts-record-main">
+  <h1>コメント編集</h1>
+  <span>現在ログイン中のユーザー名：<%= current_user.nickname %></span>
+  <table>
+    <thead>
+      <tr>
+        <th>投稿者名</th>
+        <th>タイトル</th>
+        <th>本文</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @post.user.nickname %></td>
+        <td><%= @post.title %></td>
+        <td><%= @post.text %></td>
+        <td><%= link_to "コメントを削除", "#" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_field :content, size: "30x1" %>
+    <%= f.submit '送信', class: "btn-sm btn-primary" %>
+  <% end %>
+</div>
+
