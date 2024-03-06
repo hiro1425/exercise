@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update]
-  before_action :set_comment, only: [:edit, :update]
-  before_action :set_post, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
   before_action :redirect_if_not_author, only: [:edit]
 
   def create
@@ -24,6 +24,11 @@ class CommentsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to post_path(params[:post_id])
   end
 
   private
