@@ -483,6 +483,28 @@ form input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+/* コメント編集ページ */
+.comment_edit{
+  margin-bottom: 20px;
+}
+
+.comment_contents{
+  margin-bottom: 10px;
+}
+
+.comment__delete__btn{
+  margin-left: 20px;
+  width: 60px;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #FFF;
+  background-color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
 
 /* ユーザーページ */
 .main_user{
