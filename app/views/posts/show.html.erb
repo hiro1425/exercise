@@ -36,10 +36,11 @@
         </tbody>
       </table>
       <div class="post__comments">
+        <div class="comment_index">**コメント一覧**</div>
         <% if user_signed_in? %>
           <%= form_with model: [@post, @comment], local: true do |f|%>
             <div class="field">
-              <%= f.label :content, "コメント" %><br />
+              
               <%= f.text_field :content, id:"comment_content" %>
             </div>
             <div class="actions">
