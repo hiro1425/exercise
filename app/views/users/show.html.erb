@@ -23,11 +23,25 @@
           </tr>
         </tbody>
       </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: 'posts/posts', collection: @user.posts %>
+      <div class="mypage_contents">
+        <div class="mypage_post">
+          <h2 class="page-heading">
+            <%= "#{@user.nickname}さんの投稿"%>
+          </h2>
+          <div class="user__card">
+            <%= render partial: 'posts/posts', collection: @user.posts %>
+          </div>
+        </div>
+        <div class="mypage_follow">
+          <h3>フォロー</h3>
+          <% @user.followings.each do |user| %>
+            <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+          <% end %>
+          <h3>フォロワー</h3>
+          <% @user.followers.each do |user| %>
+            <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
