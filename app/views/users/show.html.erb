@@ -2,21 +2,46 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報"%>
+        <%= "#{@user.nickname}さんのマイページ"%>
       </h2>
       <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">ニックネーム</th>
             <td class="table__col2"><%= @user.nickname %></td>
+            <td class="table__col3">
+              <% if user_signed_in? %>
+                <% if current_user != @user %>
+                  <% if @user.followed_by?(current_user) %>
+                    <%=link_to "フォロー中", user_relationships_path(@user.id),class: "followed_btn", data: { turbo_method: :delete } %>
+                  <% else %>
+                    <%=link_to "フォローする", user_relationships_path(@user.id),class: "following_btn", data: { turbo_method: :post } %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <td>
           </tr>
         </tbody>
       </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: 'posts/posts', collection: @user.posts %>
+      <div class="mypage_contents">
+        <div class="mypage_post">
+          <h2 class="page-heading">
+            <%= "#{@user.nickname}さんの投稿"%>
+          </h2>
+          <div class="user__card">
+            <%= render partial: 'posts/posts', collection: @user.posts %>
+          </div>
+        </div>
+        <div class="mypage_follow">
+          <h3>フォロー</h3>
+          <% @user.followings.each do |user| %>
+            <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+          <% end %>
+          <h3>フォロワー</h3>
+          <% @user.followers.each do |user| %>
+            <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

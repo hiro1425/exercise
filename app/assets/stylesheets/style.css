@@ -508,7 +508,7 @@ form input[type="submit"]:hover {
 
 /* ユーザーページ */
 .main_user{
-  height: 900px;
+  height: 950px;
   width: 800px;
   background-color: #FFF;
 }
@@ -524,6 +524,37 @@ form input[type="submit"]:hover {
 
 .card__title{
   padding-right: 20px;
+}
+
+.followed_btn, .following_btn {
+  margin-left: 50px;
+}
+
+.followed_btn{
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #FFF;
+}
+
+.following_btn{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #FFF;
+  color: #000;
+}
+
+.mypage_contents{
+  display: flex;
+}
+
+.mypage_post{
+  margin-right: 100px;
+}
+
+.mypage_follow{
+  margin-left: 90px;
 }
 
 /*共通*/
