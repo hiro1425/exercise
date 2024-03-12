@@ -8,9 +8,13 @@
 https://exercise-6i8n.onrender.com
 
 ## テスト用アカウント
-・メールアドレス sample@sample.com
+・メールアドレス: sample@sample.com
 
-・パスワード sample01
+・パスワード: sample01
+
+・フォロー確認用メールアドレス: test@test
+
+・フォロー確認用パスワード: test01
 
 ## 利用方法
 
@@ -55,17 +59,22 @@ https://exercise-6i8n.onrender.com
 ##### コメント編集機能
 [![Image from Gyazo](https://i.gyazo.com/f0a519fb6683f8b72fdd9898ffd478ba.gif)](https://gyazo.com/f0a519fb6683f8b72fdd9898ffd478ba)
 
-詳細ページのコメントをクリックすることでコメント編集ページへ遷移し、変更したコメントを入力し、「コメントする」をタップすることでコメント内容を変更することができる。
+詳細ページのコメントをクリックすることでコメント編集ページへ遷移し、変更したコメントを入力し、「コメントする」をクリックすることでコメント内容を変更することができる。
 
 ##### コメント削除機能
 [![Image from Gyazo](https://i.gyazo.com/cfa21275ef705eaf0672661728fe0e40.gif)](https://gyazo.com/cfa21275ef705eaf0672661728fe0e40)
 
 コメント編集ページにて「コメント削除」ボタンをクリックすることで、そのコメントを削除することができる。
 
+##### フォロー機能
+[![Image from Gyazo](https://i.gyazo.com/b29a4af3da625737230d6c4a933499b3.gif)](https://gyazo.com/b29a4af3da625737230d6c4a933499b3)
+[![Image from Gyazo](https://i.gyazo.com/1991a94adf7d6ce03b1b8f590721f447.gif)](https://gyazo.com/1991a94adf7d6ce03b1b8f590721f447)
+
+トップページの投稿一覧からフォローしたいユーザーのマイページへ移動し、「フォローする」のボタンをクリックすることで他のユーザーをフォローすることができ、またフォローした後、「フォロー中」のボタンをクリックすることでフォローを解除することもできる。
 
 ## 実装予定の機能
-現在、フォロー機能を実装中
-今後、お気に入り機能や検索機能を実装予定
+現在、お気に入り機能を実装中
+今後、検索機能、タグ機能を実装予定
 
 
 ## usersテーブル
@@ -82,6 +91,8 @@ https://exercise-6i8n.onrender.com
 has_many :posts
 
 has_many :comments
+
+has_many :relationships
 
 ## postsテーブル
 
@@ -111,3 +122,23 @@ has_many :comments
 belongs_to :user
 
 belongs_to :post
+
+## relationshipsテーブル
+
+| Column             | Type       | Options                       |
+|--------------------|------------|-------------------------------|
+| following          | references | null: false foreign_key: true |
+| follower           | references | null: false foreign_key: true |
+
+### Association
+belongs_to :user
+
+## データベース設計
+![ER Diagram](ER図.png)
+
+## 開発環境
+-Ruby
+-Ruby on Rails
+-HTML
+-CSS
+-PostgreSQL
