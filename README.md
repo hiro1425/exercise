@@ -73,72 +73,19 @@ https://exercise-6i8n.onrender.com
 トップページの投稿一覧からフォローしたいユーザーのマイページへ移動し、「フォローする」のボタンをクリックすることで他のユーザーをフォローすることができ、またフォローした後、「フォロー中」のボタンをクリックすることでフォローを解除することもできる。
 
 ## 実装予定の機能
-現在、お気に入り機能を実装中
+現在、お気に入り機能を実装中。
 今後、検索機能、タグ機能を実装予定
-
-
-## usersテーブル
-
-| Column               | Type    | Options     |
-|----------------------|---------|-------------|
-| nickname             | string  | null: false |
-| email                | string  | null: false unique: true|
-| encrypted_password   | string  | null: false |
-| age_id               | integer | null: false |
-| gender_id            | integer | null: false |
-
-### Association
-has_many :posts
-
-has_many :comments
-
-has_many :relationships
-
-## postsテーブル
-
-| Column             | Type       | Options     |
-|--------------------|------------|-------------|
-| user               | references | null: false foreign_key: true |
-| title              | string     | null: false |
-| text               | text       | null: false |
-| category_id        | integer    | null: false |
-| place_id           | integer    | null: false |
-| target_date        | date       | null: false |
-
-### Association
-belongs_to :user
-
-has_many :comments
-
-## commentsテーブル
-
-| Column             | Type       | Options     |
-|--------------------|------------|-------------|
-| text               | text       | null: false |
-| post               | references | null: false foreign_key: true |
-| user               | references | null: false foreign_key: true |
-
-### Association
-belongs_to :user
-
-belongs_to :post
-
-## relationshipsテーブル
-
-| Column             | Type       | Options                       |
-|--------------------|------------|-------------------------------|
-| following          | references | null: false foreign_key: true |
-| follower           | references | null: false foreign_key: true |
-
-### Association
-belongs_to :user
 
 ## データベース設計
 ![ER Diagram](ER図.png)
 
 ## 開発環境
--Ruby
--Ruby on Rails
--HTML
--CSS
--PostgreSQL
+- Ruby
+
+- Ruby on Rails
+
+- HTML
+
+- CSS
+
+- PostgreSQL
