@@ -14,6 +14,10 @@ class Post < ApplicationRecord
   has_many :favorites
   has_many :comments, dependent: :destroy
 
+  def favolited_by?(user)
+    favolites.where(user_id: user.id).exists?
+  end
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :place
   belongs_to :category

@@ -11,6 +11,13 @@
           <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: :post__delete__btn %>
         </div>
       <% end %>
+      <div id="like-btn<%= @post.id %>">
+        <% if user_signed_in? && @post.favolited_by?(current_user)%>
+          <%=link_to "いいね済", post_favolites_path(@post.id),  data: { turbo_method: :delete }, class: "tweet_likes" %>
+        <% else %>
+          <%=link_to "いいねする", post_favolites_path(@post.id), data: { turbo_method: :post }, class: "tweet_likes" %>
+        <% end %>
+      </div>
       <table class="detail-table">
         <tbody>
           <tr>
