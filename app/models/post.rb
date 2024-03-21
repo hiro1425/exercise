@@ -11,11 +11,11 @@ class Post < ApplicationRecord
   end
 
   belongs_to :user
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  def favolited_by?(user)
-    favolites.where(user_id: user.id).exists?
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
