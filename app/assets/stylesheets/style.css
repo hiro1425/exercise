@@ -403,11 +403,15 @@ form input[type="submit"]:hover {
   color: #999;
   text-align: center;
   text-decoration: underline;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .post__manage{
   margin-bottom: 20px;
+}
+
+.post_likes{
+  margin-bottom: 10px;
 }
 
 .detail-table {

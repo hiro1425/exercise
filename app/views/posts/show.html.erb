@@ -11,13 +11,15 @@
           <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: :post__delete__btn %>
         </div>
       <% end %>
-      <div id="like-btn<%= @post.id %>">
-        <% if user_signed_in? && @post.favorited_by?(current_user)%>
-          <%=link_to "いいね済", post_favorites_path(@post.id),  data: { turbo_method: :delete }, class: "tweet_likes" %>
-        <% else %>
-          <%=link_to "いいねする", post_favorites_path(@post.id), data: { turbo_method: :post }, class: "tweet_likes" %>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div id="like-btn<%= @post.id %>">
+          <% if @post.favorited_by?(current_user) %>
+            <%= link_to "いいね済", post_favorites_path(@post.id), data: { turbo_method: :delete }, class: "post_likes" %>
+          <% else %>
+            <%= link_to "いいねする", post_favorites_path(@post.id), data: { turbo_method: :post }, class: "post_likes" %>
+          <% end %>
+        </div>
+      <% end %>
       <table class="detail-table">
         <tbody>
           <tr>
